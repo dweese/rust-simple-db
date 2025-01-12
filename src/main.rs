@@ -20,11 +20,6 @@ async fn main() -> Result<(), Box<dyn Error>> {
         .init();
 
     info!("Entered main");
-    info!("before rabbitmq_example");
-
-    // Run the RabbitMQ example
-    // rabbitmq_example().await?;
-
     info!("before database_example");
 
     // Run the database example
