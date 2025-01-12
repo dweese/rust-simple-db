@@ -1,5 +1,5 @@
 use std::collections::HashMap;
-use std::fs::File;
+use std::fs::{File, OpenOptions};
 use std::io::{Read, Write};
 use std::sync::{Arc, Mutex};
 use tracing::{error, info};
@@ -35,12 +35,21 @@ impl Database {
     pub fn to_json(&self, file_path: &str) -> Result<(), Box<dyn std::error::Error>> {
         let data = self.data.lock().unwrap();
         let json_str = serde_json::to_string_pretty(&*data)?;
-        let mut file = File::create(file_path)?;
+
+        // Use OpenOptions to create or truncate the file
+        let mut file = OpenOptions::new()
+            .write(true)
+            .truncate(true)
+            .create(true)
+            .open(file_path)?;
+
         file.write_all(json_str.as_bytes())?;
+
         info!(
             "Database saved to JSON file: {}. Content: {}",
             file_path, json_str
         );
+
         Ok(())
     }
 
