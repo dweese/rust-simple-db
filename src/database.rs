@@ -21,6 +21,11 @@ impl Database {
         data.insert(key, value);
     }
 
+    pub fn insert_many(&self, entries: Vec<(String, String)>) {
+        let mut data = self.data.lock().unwrap();
+        data.extend(entries);
+    }
+
     pub fn get(&self, key: &str) -> Option<String> {
         let data = self.data.lock().unwrap();
         data.get(key).cloned()

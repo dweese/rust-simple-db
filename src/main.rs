@@ -38,6 +38,7 @@ async fn database_example() -> Result<(), Box<dyn Error>> {
     // Initialize the database
     let database = Database::new();
 
+
     // Create a channel for synchronization
     let (tx, rx) = mpsc::channel();
 
@@ -61,15 +62,14 @@ async fn database_example() -> Result<(), Box<dyn Error>> {
 
 async fn producer_task(database: Database, tx: mpsc::Sender<()>) -> Result<(), Box<dyn Error>> {
     info!("entered producer_task");
+
+    let entries = vec![
+        ("key1".to_string(), "value1".to_string()),
+        ("key2".to_string(), "value2".to_string()),
+        ("key3".to_string(), "value3".to_string()),
+    ];
     // Simulate inserting data into the database
-    database.insert("key1".to_string(), "value1".to_string());
-    // database.insert("key2".to_string(), "value2".to_string());
-    // database.insert("key3".to_string(), "value3".to_string());
-    // database.insert("key4".to_string(), "value4".to_string());
-    // database.insert("key5".to_string(), "value5".to_string());
-
-
-
+    database.insert_many(entries);
 
     info!("Inserted keys into the database");
 
