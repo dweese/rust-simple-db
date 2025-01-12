@@ -38,7 +38,6 @@ async fn database_example() -> Result<(), Box<dyn Error>> {
     // Initialize the database
     let database = Database::new();
 
-
     // Create a channel for synchronization
     let (tx, rx) = mpsc::channel();
 
@@ -72,8 +71,10 @@ async fn producer_task(database: Database, tx: mpsc::Sender<()>) -> Result<(), B
     database.insert_many(entries);
 
     info!("Inserted keys into the database");
-    // database.to_json()
-
+    // Save the database to a JSON file
+    if let Err(e) = database.to_json("database.json") {
+        eprintln!("Error saving database to JSON: {}", e);
+    }
     // Publish a message indicating the insertion
     // (This would normally involve publishing to RabbitMQ)
     // Send a signal after inserting the data
