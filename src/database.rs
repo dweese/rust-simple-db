@@ -3,6 +3,9 @@ use std::collections::HashMap;
 use std::fs::File;
 use std::io::{Read, Write};
 use std::sync::{Arc, Mutex};
+use tracing::info;
+use tracing_subscriber::fmt;
+use tracing_subscriber::fmt::format::FmtSpan;
 
 #[derive(Clone)]
 pub struct Database {
@@ -32,15 +35,33 @@ impl Database {
     }
 
     pub fn to_json(&self, file_path: &str) -> Result<(), Box<dyn std::error::Error>> {
+        const DATABASE_FILE: &str = "database.json";
+
+        // ... in your to_json and from_json methods ...
+
+        // Acquire the lock on the data
         let data = self.data.lock().unwrap();
+
+        // Serialize the data to a JSON string
         let json_str = serde_json::to_string_pretty(&*data)?;
-        let mut file = File::create(file_path)?;
+
+        // Create a file and write the JSON string to it
+        let mut file = File::create(DATABASE_FILE)?;
         file.write_all(json_str.as_bytes())?;
+
+        info!("Database saved to JSON file: {}", file_path);
+
         Ok(())
     }
 
     pub fn from_json(file_path: &str) -> Result<Self, Box<dyn std::error::Error>> {
-        let mut file = File::open(file_path)?;
+        const DATABASE_FILE: &str = "database.json";
+
+        // ... in your to_json and from_json methods ...
+
+
+
+        let mut file = File::open(DATABASE_FILE)?;
         let mut contents = String::new();
         file.read_to_string(&mut contents)?;
         let data: HashMap<String, String> = serde_json::from_str(&contents)?;

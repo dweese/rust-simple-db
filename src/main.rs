@@ -72,6 +72,7 @@ async fn producer_task(database: Database, tx: mpsc::Sender<()>) -> Result<(), B
     database.insert_many(entries);
 
     info!("Inserted keys into the database");
+    // database.to_json()
 
     // Publish a message indicating the insertion
     // (This would normally involve publishing to RabbitMQ)
