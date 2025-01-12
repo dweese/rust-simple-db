@@ -2,7 +2,7 @@ use std::collections::HashMap;
 use std::fs::File;
 use std::io::{Read, Write};
 use std::sync::{Arc, Mutex};
-use tracing::info;
+use tracing::{error, info};
 
 #[derive(Clone)]
 pub struct Database {
