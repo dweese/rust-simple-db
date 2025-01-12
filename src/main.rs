@@ -19,13 +19,6 @@ async fn main() -> Result<(), Box<dyn Error>> {
         .with_writer(io::stdout) // Write to standard output
         .init();
 
-    // Set up tracing subscriber to write to stdout
-    // fmt() // Call fmt() directly
-    //     .with_span_events(FmtSpan::CLOSE)
-    //     .json()
-    //     .with_writer(io::stdout) // Write to standard output
-    //     .init();
-
     info!("Entered main");
     info!("before rabbitmq_example");
 
