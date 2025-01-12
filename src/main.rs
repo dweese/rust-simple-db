@@ -63,7 +63,15 @@ async fn producer_task(database: Database, tx: mpsc::Sender<()>) -> Result<(), B
     info!("entered producer_task");
     // Simulate inserting data into the database
     database.insert("key1".to_string(), "value1".to_string());
-    info!("Inserted key1 into the database");
+    // database.insert("key2".to_string(), "value2".to_string());
+    // database.insert("key3".to_string(), "value3".to_string());
+    // database.insert("key4".to_string(), "value4".to_string());
+    // database.insert("key5".to_string(), "value5".to_string());
+
+
+
+
+    info!("Inserted keys into the database");
 
     // Publish a message indicating the insertion
     // (This would normally involve publishing to RabbitMQ)
