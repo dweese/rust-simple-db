@@ -63,3 +63,40 @@ impl Database {
         })
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_insert_and_get() {
+        let database = Database::new();
+        database.insert("key1".to_string(), "value1".to_string());
+        assert_eq!(database.get("key1"), Some("value1".to_string()));
+    }
+
+    #[test]
+    fn test_insert_many() {
+        let database = Database::new();
+        let entries = vec![
+            ("key1".to_string(), "value1".to_string()),
+            ("key2".to_string(), "value2".to_string()),
+        ];
+        database.insert_many(entries);
+        assert_eq!(database.get("key1"), Some("value1".to_string()));
+        assert_eq!(database.get("key2"), Some("value2".to_string()));
+    }
+
+    #[test]
+    fn test_to_json_and_from_json() {
+        let database = Database::new();
+        database.insert("key1".to_string(), "value1".to_string());
+        database.to_json("test_db.json").unwrap();
+
+        let loaded_db = Database::from_json("test_db.json").unwrap();
+        assert_eq!(loaded_db.get("key1"), Some("value1".to_string()));
+
+        // Clean up the test file
+        std::fs::remove_file("test_db.json").unwrap();
+    }
+}
