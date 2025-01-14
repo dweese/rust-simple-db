@@ -1,0 +1,155 @@
+[2m2025-01-14T05:43:23.139533Z[0m [32m INFO[0m [2mwgpu_hal::vulkan::instance[0m[2m:[0m Debug utils not enabled: debug_utils_user_data not passed to Instance::from_raw    
+[2m2025-01-14T05:43:23.165105Z[0m [32m INFO[0m [2miced_wgpu::window::compositor[0m[2m:[0m Settings {
+    present_mode: AutoVsync,
+    backends: Backends(
+        VULKAN | GL | METAL | DX12 | BROWSER_WEBGPU,
+    ),
+    default_font: Font {
+        family: SansSerif,
+        weight: Normal,
+        stretch: Normal,
+        style: Normal,
+    },
+    default_text_size: Pixels(
+        16.0,
+    ),
+    antialiasing: None,
+}    
+[2m2025-01-14T05:43:23.166256Z[0m [33m WARN[0m [2mwgpu_hal::vulkan::adapter[0m[2m:[0m Disabling robustBufferAccess2 and robustImageAccess2: IntegratedGpu Intel Driver is outdated. Found with version 0x192688, less than the known good version 0x194843 (31.0.101.2115)    
+[2m2025-01-14T05:43:23.166621Z[0m [32m INFO[0m [2mwgpu_core::instance[0m[2m:[0m Adapter AdapterInfo { name: "Intel(R) UHD Graphics", vendor: 32902, device: 39745, device_type: IntegratedGpu, driver: "Intel Corporation", driver_info: "Intel driver", backend: Vulkan }    
+[2m2025-01-14T05:43:23.166651Z[0m [32m INFO[0m [2mwgpu_core::instance[0m[2m:[0m Adapter AdapterInfo { name: "NVIDIA GeForce GTX 1050 with Max-Q Design", vendor: 4318, device: 7314, device_type: DiscreteGpu, driver: "NVIDIA", driver_info: "565.90", backend: Vulkan }    
+[2m2025-01-14T05:43:23.270780Z[0m [32m INFO[0m [2mwgpu_core::instance[0m[2m:[0m Adapter AdapterInfo { name: "Intel(R) UHD Graphics", vendor: 32902, device: 39745, device_type: IntegratedGpu, driver: "30.0.100.9864", driver_info: "", backend: Dx12 }    
+[2m2025-01-14T05:43:23.270825Z[0m [32m INFO[0m [2mwgpu_core::instance[0m[2m:[0m Adapter AdapterInfo { name: "NVIDIA GeForce GTX 1050 with Max-Q Design", vendor: 4318, device: 7314, device_type: DiscreteGpu, driver: "32.0.15.6590", driver_info: "", backend: Dx12 }    
+[2m2025-01-14T05:43:23.271044Z[0m [32m INFO[0m [2mwgpu_core::instance[0m[2m:[0m Adapter AdapterInfo { name: "Intel(R) UHD Graphics", vendor: 32902, device: 0, device_type: IntegratedGpu, driver: "", driver_info: "4.6.0 - Build 30.0.100.9864", backend: Gl }    
+[2m2025-01-14T05:43:23.290593Z[0m [32m INFO[0m [2miced_wgpu::window::compositor[0m[2m:[0m Available adapters: [
+    AdapterInfo {
+        name: "Intel(R) UHD Graphics",
+        vendor: 32902,
+        device: 39745,
+        device_type: IntegratedGpu,
+        driver: "Intel Corporation",
+        driver_info: "Intel driver",
+        backend: Vulkan,
+    },
+    AdapterInfo {
+        name: "NVIDIA GeForce GTX 1050 with Max-Q Design",
+        vendor: 4318,
+        device: 7314,
+        device_type: DiscreteGpu,
+        driver: "NVIDIA",
+        driver_info: "565.90",
+        backend: Vulkan,
+    },
+    AdapterInfo {
+        name: "Intel(R) UHD Graphics",
+        vendor: 32902,
+        device: 39745,
+        device_type: IntegratedGpu,
+        driver: "30.0.100.9864",
+        driver_info: "",
+        backend: Dx12,
+    },
+    AdapterInfo {
+        name: "NVIDIA GeForce GTX 1050 with Max-Q Design",
+        vendor: 4318,
+        device: 7314,
+        device_type: DiscreteGpu,
+        driver: "32.0.15.6590",
+        driver_info: "",
+        backend: Dx12,
+    },
+    AdapterInfo {
+        name: "Intel(R) UHD Graphics",
+        vendor: 32902,
+        device: 0,
+        device_type: IntegratedGpu,
+        driver: "",
+        driver_info: "4.6.0 - Build 30.0.100.9864",
+        backend: Gl,
+    },
+]    
+[2m2025-01-14T05:43:23.291641Z[0m [33m WARN[0m [2mwgpu_hal::vulkan::adapter[0m[2m:[0m Disabling robustBufferAccess2 and robustImageAccess2: IntegratedGpu Intel Driver is outdated. Found with version 0x192688, less than the known good version 0x194843 (31.0.101.2115)    
+[2m2025-01-14T05:43:23.378094Z[0m [32m INFO[0m [2mwgpu_core::instance[0m[2m:[0m Adapter AdapterInfo { name: "Intel(R) UHD Graphics", vendor: 32902, device: 39745, device_type: IntegratedGpu, driver: "Intel Corporation", driver_info: "Intel driver", backend: Vulkan }    
+[2m2025-01-14T05:43:23.394322Z[0m [32m INFO[0m [2miced_wgpu::window::compositor[0m[2m:[0m Selected: AdapterInfo {
+    name: "Intel(R) UHD Graphics",
+    vendor: 32902,
+    device: 39745,
+    device_type: IntegratedGpu,
+    driver: "Intel Corporation",
+    driver_info: "Intel driver",
+    backend: Vulkan,
+}    
+[2m2025-01-14T05:43:23.394423Z[0m [32m INFO[0m [2miced_wgpu::window::compositor[0m[2m:[0m Available formats: Copied {
+    it: Iter(
+        [
+            Bgra8UnormSrgb,
+            Rgba8UnormSrgb,
+            Bgra8Unorm,
+            Rgba8Unorm,
+        ],
+    ),
+}    
+[2m2025-01-14T05:43:23.394449Z[0m [32m INFO[0m [2miced_wgpu::window::compositor[0m[2m:[0m Available alpha modes: [
+    Opaque,
+    Inherit,
+]    
+[2m2025-01-14T05:43:23.394467Z[0m [32m INFO[0m [2miced_wgpu::window::compositor[0m[2m:[0m Selected format: Bgra8UnormSrgb with alpha mode: Auto    
+[2m2025-01-14T05:43:23.442238Z[0m [32m INFO[0m [2miced_winit::program[0m[2m:[0m Window attributes for id `Id(
+    1,
+)`: WindowAttributes {
+    inner_size: Some(
+        Logical(
+            LogicalSize {
+                width: 1024.0,
+                height: 768.0,
+            },
+        ),
+    ),
+    min_inner_size: None,
+    max_inner_size: None,
+    position: Some(
+        Physical(
+            PhysicalPosition {
+                x: 640,
+                y: 120,
+            },
+        ),
+    ),
+    resizable: true,
+    enabled_buttons: WindowButtons(
+        CLOSE | MINIMIZE | MAXIMIZE,
+    ),
+    title: "Welcome - Iced",
+    maximized: false,
+    visible: false,
+    transparent: false,
+    blur: false,
+    decorations: true,
+    window_icon: None,
+    preferred_theme: None,
+    resize_increments: None,
+    content_protected: false,
+    window_level: Normal,
+    active: true,
+    cursor: Icon(
+        Default,
+    ),
+    parent_window: None,
+    fullscreen: None,
+    platform_specific: PlatformSpecificWindowAttributes {
+        owner: None,
+        menu: None,
+        taskbar_icon: None,
+        no_redirection_bitmap: false,
+        drag_and_drop: true,
+        skip_taskbar: false,
+        class_name: "Window Class",
+        decoration_shadow: false,
+        backdrop_type: Auto,
+        clip_children: true,
+        border_color: None,
+        title_background_color: None,
+        title_text_color: None,
+        corner_preference: None,
+    },
+}    
